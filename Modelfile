@@ -1,0 +1,15 @@
+FROM geradeluxer/Meta-Llama-3.1-8B-bnb-4bit/unsloth.Q4_K_M.gguf
+
+TEMPLATE """Below are some instructions that describe some tasks. Write responses that appropriately address the tasks.
+
+### Instruction:
+{{ .Prompt }}
+
+### Response:
+{{ .Response }}<|end_of_text|>"""
+
+PARAMETER stop "<|start_header_id|>"
+PARAMETER stop "<|end_header_id|>"
+PARAMETER stop "<|eot_id|>"
+PARAMETER stop "<|end_of_text|>"
+PARAMETER stop "<|reserved_special_token_"
